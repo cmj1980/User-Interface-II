@@ -1,6 +1,6 @@
 /* CSS reset for browser adaptability.
 Box Model Properties Margin, Border, Padding, Content*/
-html, body, div, span, applet, object, iframe,
+/*html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -13,14 +13,14 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
+	/*margin: 0;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
+	vertical-align: baseline;*/
+/*}
+/* HTML5 display-role reset for older browsers 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -42,27 +42,45 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}
+}*/
+
+/*css reset*/
 *{
-    /*border: 2px solid red;*/
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
     
+    
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+section{
+    padding: 4% 0;
 }
 
 .section1{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    justify-content: space-evenly;
     text-align: center;
-    font-size: 100%;
+    width: 70%;
+    margin: 0 auto;
+    font-family: 'Teko', monospace;
 }
-.image-section1{
-display: flex;
-flex-direction: column;
-justify-content: center;
-padding-top: 20px;
+.bg-section{
+    background-image: url('https://images.unsplash.com/photo-1536244792875-ae64f6842985?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG1vdW50YWluZyUyMGJpa2luZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 50vh;
 }
-.image-section2{
+.row-section{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -71,23 +89,35 @@ padding-top: 20px;
 .randomtext{
     width: 200px;
     text-align: center;
-    margin-top: 300px;
-    font-size: 30px;
+    padding: 20px;
+    font-family: 'Teko';
     
 }
 footer{
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
     text-align: center;
     background-color: lightgray;
-    padding: 25px;
+    padding: 20px;
+    font-family: 'Teko';
+}
+.socials{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 25%;
+}
+.smlinks{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 button {
     background-color: white;
     color: black;
     border: black solid 1px;
     padding: 10px 20px;
+    font-family: 'Teko';
 }
 button:hover{
 background-color: red;
@@ -98,14 +128,47 @@ button a{
     text-decoration: none;
     color: inherit;
 }
-h3{
-    font-size: 25px;
-}
+
 h1{
-    font-size: 32px;
-    padding: 25px;
+    font-size: 4rem;
+    
+}
+h1, h2{
+    margin: 2% 0;
 }
 h2{
-    font-size: 30px;
-    padding: 25px;
+    font-size: 3.5rem;
+}
+
+@media(max-width: 800px){
+    .row-section{
+        flex-wrap: wrap;
+    }
+    .row-section img{
+        width: 20%;
+    }
+    .row-section div{
+        width: 100%;
+    }
+
+}
+
+@media(max-width: 500px){
+    .links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .links button{
+        width: 40%;
+        margin: .5% 0;
+    }
+    .row-section{
+        flex-wrap:wrap ;
+    }
+    .row-section img{
+        width: 40%;
+        margin: 4% 0;
+    }
+
 }
